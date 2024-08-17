@@ -1,0 +1,45 @@
+html{
+  font-family: Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 100%;
+  color: #2c3e50;
+
+  /* background: transparent url("bgdust.png"); */
+}
+.main{
+  width: 850px;
+  border: 1px solid #ccc;
+
+  margin: 0 auto;
+}
+.top-line{
+  text-align: center;
+  border: 1px solid #ccc;
+}
+button {
+  margin: 5px 0;
+}
+.container{
+  text-align: center;
+}
+.container > div {
+  /* color: #fff; */
+  display: inline-block;
+  vertical-align: top;
+  width: 250px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin: 5px;
+  /* background-color: #8b00ff;
+  background: -webkit-linear-gradient(45deg, #cd00cd, #8b00ff 65%); */
+}
+.container > div > div:nth-child(1){
+  border-bottom: 1px solid #ccc;
+  overflow: hidden;
+  white-space: nowrap;
+  font-weight: bold;
+}
+.container > div > div:nth-child(2){
+  overflow: hidden;
+  text-align: left;
+  text-indent: 7px;
+}
