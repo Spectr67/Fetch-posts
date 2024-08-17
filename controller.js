@@ -1,4 +1,4 @@
-async function handleStart() {
-  await updateTextData()
-  renderContainerAll(textDataTop, textDataBot)
+async function handleLoadData() {
+  await updatePosts()
+  renderContainerAll(posts)
 }

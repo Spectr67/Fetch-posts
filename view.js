@@ -1,32 +1,42 @@
-const startButton = document.querySelector('button')
-startButton.onclick = startLoadData
+const elButtonStart = document.querySelector('button')
+elButtonStart.onclick = onClickButtonLoadData
 
-async function startLoadData() {
- await handleStart()
+function onClickButtonLoadData() {
+  handleLoadData()
 }
 
-
-function renderContainerAll(listTextDataTop, listTextDataBot) {
+function renderContainerAll(posts) {
   document.querySelector('.container').innerHTML = ''
-  let i = 0
-  while (i < listTextDataTop.length) {
-    renderContainer(listTextDataTop[i], listTextDataBot[i])
-    i++
-  }
+
+  // function helper(post) {
+  //   renderContainer(post)
+  // }
+
+  // posts.forEach(post => renderContainer(post))
+
+  // posts.forEach(helper)
+
+  posts.forEach(renderContainer)
+
+  // let i = 0
+  // while (i < posts.length) {
+  //   renderContainer(posts[i])
+  //   i++
+  // }
 }
 
-function renderContainer(textDataTop, textDataBot) {
+function renderContainer(post) {
   const elContainer = document.querySelector('.container')
-  const elDivPost = generateDivPost(textDataTop, textDataBot)
+  const elDivPost = generateDivPost(post)
   elContainer.appendChild(elDivPost)
 }
 
-function generateDivPost(textDataTop, textDataBot) {
+function generateDivPost(post) {
   const elDivPost = document.createElement('div')
   const elDivTop = document.createElement('div')
   const elDivBot = document.createElement('div')
-  elDivTop.textContent = textDataTop
-  elDivBot.textContent = textDataBot
+  elDivTop.textContent = post.title
+  elDivBot.textContent = post.body
   elDivPost.appendChild(elDivTop)
   elDivPost.appendChild(elDivBot)
   return elDivPost
